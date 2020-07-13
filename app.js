@@ -5,7 +5,7 @@ var miniButtons = document.getElementById("miniButtons");
 miniButtons.style.display = "none"
 var imagered = new Image();
 var extractRGBButton = document.getElementById("extractRGBButton");
-
+extractRGBButton.style.display = "none"
 
 // Define constants
 var cameraView = document.querySelector("#camera--view"),
@@ -25,7 +25,7 @@ function cameraStart() {
         .then(function(stream) {
         track = stream.getTracks()[0];
             cameraView.srcObject = stream;
-            extractRGBButton.style.display = "none"
+            
     })
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
