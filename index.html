@@ -1,4 +1,5 @@
 ﻿<html lang=”en”>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,10 +14,13 @@
     <main id="camera">
         <!-- Camera sensor -->
         <canvas id="camera--sensor"></canvas>
+
         <!-- Camera view -->
         <video id="camera--view" autoplay playsinline></video>
         <!-- Camera output -->
         <img src="//:0" alt="" id="camera--output">
+        <img src="//:0" alt="" id="camera--output--red">
+        <img src="//:0" alt="" id="camera--output--blue">
         <!-- Camera trigger -->
         <button id="camera--trigger">Take a picture</button>
         <!-- Text Overlay -->
@@ -30,8 +34,10 @@
             <button id="minipreviousInstruction" onclick="previousInstruction()">Previous</button>
             <button id="mininextInstruction" onclick="nextInstruction()">Next</button>
         </div>
+        <button id="changeImage" onclick="extractRGB()">Change image</button>
     </main>
     <!-- Reference to your JavaScript file -->
     <script src="app.js"></script>
+    <script type="text/javascript" src="caman.min.js"></script>
 </body>
 </html>

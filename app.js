@@ -3,12 +3,19 @@ var constraints = { video: { facingMode: "user" }, audio: false };
 var textCounter = 0;
 var miniButtons = document.getElementById("miniButtons");
 miniButtons.style.display = "none"
+var imagered = new Image();
+
+
 
 // Define constants
-const cameraView = document.querySelector("#camera--view"),
+var cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
-    cameraTrigger = document.querySelector("#camera--trigger")
+    cameraTrigger = document.querySelector("#camera--trigger"),
+    cameraOutputRed = document.querySelector("#camera--output--red"),
+    cameraOutputBlue = document.querySelector("#camera--output--blue")
+
+
 
 
 // Access the device camera and stream to cameraView
@@ -30,6 +37,10 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
+    //cameraOutputRed.src = cameraSensor.toDataURL("image/webp");
+    //cameraOutputRed.classList.add("takenred");
+    
+
 };
 
 //Define constants for which overlay is currently shown
@@ -70,5 +81,49 @@ function nextInstruction() {
     textCounter++;
     displayText();
 }
+function extractRGB() {
+    var newCanvas = document.createElement('canvas');
+    var context = newCanvas.getContext('2d');
+    newCanvas.width = cameraSensor.width;
+    newCanvas.height = cameraSensor.height;
+    context.drawImage(cameraView, 0, 0);
+    
+    //cameraOutputRed.src = cameraOutput.src;
+    //camanCanvas.drawImage(cameraOutput, 0, 0)
+    //context.drawImage(cameraSensor, 0, 0);
+    cameraOutputRed.src = cameraOutput.src
+    Caman('#camera--Output--Red', function () {
+        this.channels({
+            red: 0,
+            green: -100,
+            blue: -100
+        }).render();
+    });
+
+    //cameraOutputRed.src = newCanvas.toDataURL();
+    cameraOutputRed.classList.add("takenred");
+
+    var blueCanvas = document.createElement('canvas');
+    var blueContext = newCanvas.getContext('2d');
+    blueContext.width = cameraSensor.width;
+    blueContext.height = cameraSensor.height;
+    blueContext.drawImage(cameraView, 0, 0);
+
+    //cameraOutputRed.src = cameraOutput.src;
+    //camanCanvas.drawImage(cameraOutput, 0, 0)
+    //context.drawImage(cameraSensor, 0, 0);
+    cameraOutputBlue.src = cameraOutput.src
+    Caman('#camera--Output--Blue', function () {
+        this.channels({
+            red: -100,
+            green: -100,
+            blue: 0
+        }).render();
+    });
+
+    cameraOutputRed.classList.add("takenred");
+    cameraOutputBlue.classList.add("takenblue");
+}
+
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
