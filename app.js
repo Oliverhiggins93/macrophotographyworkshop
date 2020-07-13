@@ -7,6 +7,8 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#camera--trigger")
 //Define constants for which overlay is currently shown
 var x = 0;
+var createtextbox = document.createElement("INPUT");
+createtextbox.setAttribute("type", "text");
 // Access the device camera and stream to cameraView
 function cameraStart() {
     navigator.mediaDevices
@@ -27,5 +29,14 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
 };
+
+function displayText() {
+    var x = document.getElementById("workshopText");
+    if (x.innerHTML === "Hello and welcome to the workshop") {
+        x.innerHTML = "Thanks for clicking the button!";
+    } else {
+        x.innerHTML = "Hello";
+    }
+}
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
