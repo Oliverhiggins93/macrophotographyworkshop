@@ -52,9 +52,10 @@ html, body{
     bottom: 30px;
     left: calc(50% - 100px);
 }
-#workshopText {
-    width: 200px;
+#workshopOverlay {
+    width: 400px;
     background-color: black;
+    opacity: 25%;
     color: white;
     font-size: 16px;
     border-radius: 30px;
@@ -63,6 +64,6 @@ html, body{
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
-    bottom: 30px;
-    left: calc(50% - 100px);
+    bottom: 200px;
+    left: calc(50% - 200px);
 }

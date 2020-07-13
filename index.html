@@ -20,10 +20,10 @@
         <!-- Camera trigger -->
         <button id="camera--trigger">Take a picture</button>
         <!-- Text Overlay -->
-        
-        <div id="workshopText">
-            <p>Hello and welcome to the workshop</p>
-            <button onclick="displayText()">Click to advance</button>
+        <div id="workshopOverlay">
+            <p id="workshopInstructions">Hello and welcome to the workshop</p>
+            <button onclick="previousInstruction()">Previous</button>
+            <button onclick="nextInstruction()">Next</button>
         </div>
     </main>
     <!-- Reference to your JavaScript file -->

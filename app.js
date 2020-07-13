@@ -1,12 +1,12 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
+var textCounter = 0;
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger")
-//Define constants for which overlay is currently shown
-var x = 0;
+
 
 // Access the device camera and stream to cameraView
 function cameraStart() {
@@ -29,13 +29,37 @@ cameraTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
 };
 
+//Define constants for which overlay is currently shown
+
 function displayText() {
-    var x = document.getElementById("workshopText");
-    if (x.innerHTML === "Hello and welcome to the workshop") {
-        x.innerHTML = "Thanks for clicking the button!";
-    } else {
-        x.innerHTML = "Hello";
+    var overlayText = document.getElementById("workshopInstructions");
+    var overlayBox = document.getElementById("workshopOverlay");
+
+    if (textCounter == 0) {
+        overlayText.innerText = "Thanks for clicking the button!";
+        
     }
+    if (textCounter == 1) {
+        overlayText.innerText = "Thanks for clicking again!";
+    }
+    if (textCounter == 2) {
+        overlayText.innerText = "OK THATS ENOUGH";
+    }
+    if (textCounter == 3) {
+        overlayText.innerText = "The next click will hide the tip, so we can see the camera. Click the arrow at the bottom to bring it back up";
+    }
+    if (textCounter == 4) {
+        overlayBox.style.display = "none";
+    }
+}
+
+function previousInstruction() {
+    textCounter--;
+    displayText();
+}
+function nextInstruction() {
+    textCounter++;
+    displayText();
 }
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
