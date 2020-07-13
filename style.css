@@ -54,10 +54,6 @@ html, body{
 }
 #workshopText {
     position: absolute;
-    z-index: 10;
-}
-.wrapper {
-    position: absolute;
     top: 0;
     left: 50%;
     right: 50%;
