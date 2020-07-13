@@ -4,7 +4,7 @@ var textCounter = 0;
 var miniButtons = document.getElementById("miniButtons");
 miniButtons.style.display = "none"
 var imagered = new Image();
-
+var extractRGBButton = document.getElementById("extractRGBButton");
 
 
 // Define constants
@@ -24,7 +24,8 @@ function cameraStart() {
         .getUserMedia(constraints)
         .then(function(stream) {
         track = stream.getTracks()[0];
-        cameraView.srcObject = stream;
+            cameraView.srcObject = stream;
+            extractRGBButton.style.display = "none"
     })
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
@@ -68,8 +69,9 @@ function displayText() {
         miniButtons.style.display = "block"
     }
     if (textCounter == 5) {
-        overlayBox.style.display = "Great picture";
-        miniButtons.style.display = "block"
+        overlayBox.innerText = "Great, we took a picture. Now lets see what the Red and Blue components of the picture look like.";
+        overlayBox.style.display = "block"
+        extractRGBButton.style.display= "block"
     }
 }
 
@@ -100,7 +102,7 @@ function extractRGB() {
         }).render();
     });
 
-    //cameraOutputRed.src = newCanvas.toDataURL();
+    cameraOutputRed.src = newCanvas.toDataURL();
     cameraOutputRed.classList.add("takenred");
 
     var blueCanvas = document.createElement('canvas');
@@ -112,7 +114,7 @@ function extractRGB() {
     //cameraOutputRed.src = cameraOutput.src;
     //camanCanvas.drawImage(cameraOutput, 0, 0)
     //context.drawImage(cameraSensor, 0, 0);
-    cameraOutputBlue.src = cameraOutput.src
+    
     Caman('#camera--Output--Blue', function () {
         this.channels({
             red: -100,
@@ -120,9 +122,12 @@ function extractRGB() {
             blue: 0
         }).render();
     });
-
+    cameraOutputBlue.src = cameraOutput.src
     cameraOutputRed.classList.add("takenred");
     cameraOutputBlue.classList.add("takenblue");
+    context.fillRect(0, 0, newCanvas.width, newCanvas.height);
+    blueContext.fillRect(0, 0, newCanvas.width, newCanvas.height);
+    
 }
 
 // Start the video stream when the window loads
