@@ -1,8 +1,8 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 var textCounter = 0;
-//var miniButtons = document.getElementById("miniButtons");
-//miniButtons.style.display = "none"
+var miniButtons = document.getElementById("miniButtons");
+miniButtons.style.display = "none"
 var imagered = new Image();
 var extractRGBButton = document.getElementById("extractRGBButton");
 extractRGBButton.style.display = "none"
@@ -38,8 +38,6 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
-    textCounter++;
-    extractRGBButton.style.display = "block"
     //cameraOutputRed.src = cameraSensor.toDataURL("image/webp");
     //cameraOutputRed.classList.add("takenred");
     
@@ -68,13 +66,12 @@ function displayText() {
     }
     if (textCounter == 4) {
         overlayBox.style.display = "none";
-        
-        //miniButtons.style.display = "block"
+        miniButtons.style.display = "block"
     }
-    if (textCounter > 4) {
+    if (textCounter == 5) {
         overlayBox.innerText = "Great, we took a picture. Now lets see what the Red and Blue components of the picture look like.";
         overlayBox.style.display = "block"
-        
+        extractRGBButton.style.display= "block"
     }
 }
 

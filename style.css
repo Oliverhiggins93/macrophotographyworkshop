@@ -14,21 +14,39 @@ html, body{
     transform: scaleX(-1);
     filter: FlipH;
 }
-
+#buttonGroup {
+    margin: auto;
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    bottom: 10px;
+    position: fixed;
+}
 #camera--trigger {
-    width: 25%;
+    margin: auto;
+    color: white;
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    bottom: 10px;
+    position: fixed;
+    background-color: black;
+    border: none;
+}
+
+#extractRGBButton {
     background-color: black;
     color: white;
-    font-size: 16px;
-    border-radius: 30px;
-    border: none;
-    padding: 10px 10px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    margin: auto;
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    bottom: 20%;
     position: fixed;
-    bottom: 30px;
-    left: calc(25%);
+    border: none;
 }
+
+
 .taken{
     height: 100px!important;
     width: 100px!important;
@@ -60,13 +78,11 @@ html, body{
     right: 20px;
     z-index: 2;
 }
-#buttonGroup {
-    position:center
-}
+
 #workshopOverlay {
     width: 50%;
     background-color: black;
-    opacity: 50%;
+    opacity: 50;
     color: white;
     font-size: 16px;
     border-radius: 30px;
@@ -77,32 +93,4 @@ html, body{
     position: fixed;
     bottom: 200px;
     left: calc(25%);
-}
-#miniButtons {
-    width: 200px;
-    background-color: black;
-    color: white;
-    font-size: 16px;
-    border-radius: 30px;
-    border: none;
-    padding: 10px 10px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
-    bottom: 75px;
-    left: 25%;
-}
-#extractRGBButton {
-    width: 25%;
-    background-color: black;
-    color: white;
-    font-size: 16px;
-    border-radius: 30px;
-    border: none;
-    padding: 10px 10px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
-    bottom: 120px;
-    left: 25%;
 }
