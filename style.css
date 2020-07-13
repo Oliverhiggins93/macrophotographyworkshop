@@ -24,47 +24,32 @@ html, body{
 }
 #camera--trigger {
     margin: auto;
+    color: white;
     width: 50%;
     height: 10%;
     padding: 10px;
     bottom: 10px;
     position: fixed;
-}
-
-#miniButtons {
-    width: 200px;
     background-color: black;
-    color: white;
-    font-size: 16px;
-    border-radius: 30px;
     border: none;
-    padding: 10px 10px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
-    bottom: 75px;
-    left: 25%;
 }
 
 #extractRGBButton {
-    width: 25%;
     background-color: black;
     color: white;
-    font-size: 16px;
-    border-radius: 30px;
-    border: none;
-    padding: 10px 10px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    margin: auto;
+    width: 25%;
+    height: 10%;
+    padding: 10px;
+    bottom: 20%;
     position: fixed;
-    bottom: 120px;
-    left: 25%;
+    border: none;
 }
 
 
 .taken{
-    height: auto;
-    width: 50%;
+    height: 150px!important;
+    width: 150px!important;
     transition: all 0.5s ease-in;
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
@@ -74,8 +59,8 @@ html, body{
 }
 
 .takenred {
-    height: 100px !important;
-    width: 100px !important;
+    height: 150px !important;
+    width: 150px !important;
     transition: all 0.5s ease-in;
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
@@ -84,8 +69,8 @@ html, body{
     z-index: 2;
 }
 .takenblue {
-    height: 100px !important;
-    width: 100px !important;
+    height: 150px !important;
+    width: 150px !important;
     transition: all 0.5s ease-in;
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
