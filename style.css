@@ -75,7 +75,7 @@ html, body{
     left: calc(25%);
 }
 #workshopOverlay {
-    width: 400px;
+    width: 200px;
     background-color: black;
     opacity: 50%;
     color: white;
@@ -87,7 +87,7 @@ html, body{
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 200px;
-    left: calc(50% - 200px);
+    left: auto;
 }
 #miniButtons {
     width: 200px;
@@ -101,7 +101,7 @@ html, body{
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 30px;
-    left: 75%;
+    left: auto;
 }
 #extractRGBButton {
     width: 200px;
@@ -115,5 +115,5 @@ html, body{
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
     bottom: 30px;
-    left: 75%;
+    left: auto;
 }
