@@ -5,6 +5,8 @@ const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger")
+//Define constants for which overlay is currently shown
+var x = 0;
 // Access the device camera and stream to cameraView
 function cameraStart() {
     navigator.mediaDevices
