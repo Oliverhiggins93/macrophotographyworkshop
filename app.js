@@ -86,9 +86,12 @@ function nextInstruction() {
 function extractRGB() {
     var newCanvas = document.createElement('canvas');
     var context = newCanvas.getContext('2d');
+    context.fillRect(0, 0, newCanvas.width, newCanvas.height);
     newCanvas.width = cameraSensor.width;
     newCanvas.height = cameraSensor.height;
     context.drawImage(cameraView, 0, 0);
+
+    
     
     //cameraOutputRed.src = cameraOutput.src;
     //camanCanvas.drawImage(cameraOutput, 0, 0)
@@ -105,16 +108,17 @@ function extractRGB() {
     cameraOutputRed.src = newCanvas.toDataURL();
     cameraOutputRed.classList.add("takenred");
 
+    //cameraOutputRed.src = cameraOutput.src;
+    //camanCanvas.drawImage(cameraOutput, 0, 0)
+    //context.drawImage(cameraSensor, 0, 0);
+
     var blueCanvas = document.createElement('canvas');
     var blueContext = newCanvas.getContext('2d');
     blueContext.width = cameraSensor.width;
     blueContext.height = cameraSensor.height;
     blueContext.drawImage(cameraView, 0, 0);
-
-    //cameraOutputRed.src = cameraOutput.src;
-    //camanCanvas.drawImage(cameraOutput, 0, 0)
-    //context.drawImage(cameraSensor, 0, 0);
-    
+    blueContext.fillRect(0, 0, newCanvas.width, newCanvas.height);
+           
     Caman('#camera--Output--Blue', function () {
         this.channels({
             red: -100,
@@ -125,9 +129,6 @@ function extractRGB() {
     cameraOutputBlue.src = cameraOutput.src
     cameraOutputRed.classList.add("takenred");
     cameraOutputBlue.classList.add("takenblue");
-    context.fillRect(0, 0, newCanvas.width, newCanvas.height);
-    blueContext.fillRect(0, 0, newCanvas.width, newCanvas.height);
-    
 }
 
 // Start the video stream when the window loads
