@@ -108,10 +108,12 @@ function extractRGB() {
         }).render();
     });
 
-    cameraOutputRed.src = newCanvas.toDataURL();
-    cameraOutputRed.classList.add("takenred");
+    //cameraOutputRed.src = newCanvas.toDataURL();
+    //cameraOutputRed.classList.add("takenred");
+    
 
-    //cameraOutputRed.src = cameraOutput.src;
+    cameraOutputRed.src = cameraOutput.src;
+    cameraOutputRed.classList.add("takenred");
     //camanCanvas.drawImage(cameraOutput, 0, 0)
     //context.drawImage(cameraSensor, 0, 0);
 
@@ -130,7 +132,7 @@ function extractRGB() {
         }).render();
     });
     cameraOutputBlue.src = cameraOutput.src
-    cameraOutputRed.classList.add("takenred");
+    
     cameraOutputBlue.classList.add("takenblue");
 }
 
