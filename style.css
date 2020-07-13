@@ -60,7 +60,7 @@ html, body{
     right: 20px;
     z-index: 2;
 }
-#camera--trigger {
+#buttonGroup {
     width: 100px;
     background-color: black;
     color: white;
@@ -90,17 +90,17 @@ html, body{
     left: calc(50% - 200px);
 }
 #miniButtons {
-    width: 200px;
+    width: 100px;
     background-color: black;
     color: white;
     font-size: 16px;
     border-radius: 30px;
     border: none;
-    padding: 15px 20px;
+    padding: 30px 30px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
-    bottom: 60px;
+    bottom: 75px;
     left: 25%;
 }
 #extractRGBButton {
@@ -114,6 +114,6 @@ html, body{
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     position: fixed;
-    bottom: 30px;
-    left: 75%;
+    bottom: 150px;
+    left: 25%;
 }

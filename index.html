@@ -22,19 +22,22 @@
         <img src="//:0" alt="" id="camera--output--red">
         <img src="//:0" alt="" id="camera--output--blue">
         <!-- Camera trigger -->
-        <button id="camera--trigger">Take a picture</button>
+        <div id="buttonGroup">
+            <button id="camera--trigger">Take a picture</button>
+            <!-- Mini buttons-->
+            <div id="miniButtons">
+                <button id="minipreviousInstruction" onclick="previousInstruction()">Previous</button>
+                <button id="mininextInstruction" onclick="nextInstruction()">Next</button>
+            </div>
+            <button id="extractRGBButton" onclick="extractRGB()">Extract RGB from Image</button>
+        </div>
         <!-- Text Overlay -->
         <div id="workshopOverlay">
             <p id="workshopInstructions">Hello and welcome to the workshop. Please click the next button!</p>
             <button onclick="previousInstruction()">Previous</button>
             <button onclick="nextInstruction()">Next</button>
         </div>
-        <!-- Mini buttons-->
-        <div id="miniButtons">
-            <button id="minipreviousInstruction" onclick="previousInstruction()">Previous</button>
-            <button id="mininextInstruction" onclick="nextInstruction()">Next</button>
-        </div>
-        <button id="extractRGBButton" onclick="extractRGB()">Extract RGB from Image</button>
+        
     </main>
     <!-- Reference to your JavaScript file -->
     <script src="app.js"></script>
