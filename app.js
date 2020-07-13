@@ -1,6 +1,9 @@
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "user" }, audio: false };
 var textCounter = 0;
+var miniButtons = document.getElementById("miniButtons");
+miniButtons.style.display = "none"
+
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
     cameraOutput = document.querySelector("#camera--output"),
@@ -34,6 +37,7 @@ cameraTrigger.onclick = function() {
 function displayText() {
     var overlayText = document.getElementById("workshopInstructions");
     var overlayBox = document.getElementById("workshopOverlay");
+    
 
     if (textCounter == 0) {
         overlayText.innerText = "Thanks for clicking the button!";
@@ -50,6 +54,11 @@ function displayText() {
     }
     if (textCounter == 4) {
         overlayBox.style.display = "none";
+        miniButtons.style.display = "block"
+    }
+    if (textCounter == 5) {
+        overlayBox.style.display = "Great picture";
+        miniButtons.style.display = "block"
     }
 }
 
