@@ -93,13 +93,11 @@ function extractRGB() {
     newCanvas.width = cameraSensor.width;
     newCanvas.height = cameraSensor.height;
     context.drawImage(cameraView, 0, 0);
-
-    
-    
+    Context.fillRect(0, 0, newCanvas.width, newCanvas.height);
     //cameraOutputRed.src = cameraOutput.src;
     //camanCanvas.drawImage(cameraOutput, 0, 0)
     //context.drawImage(cameraSensor, 0, 0);
-    cameraOutputRed.src = cameraOutput.src
+    //cameraOutputRed.src = cameraOutput.src
     Caman('#camera--Output--Red', function () {
         this.channels({
             red: 0,
