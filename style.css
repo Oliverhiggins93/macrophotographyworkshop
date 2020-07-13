@@ -61,23 +61,23 @@ html, body{
     z-index: 2;
 }
 #camera--trigger {
-    width: 200px;
+    width: 150px;
     background-color: black;
     color: white;
     font-size: 16px;
-    border-radius: 30px;
+    border-radius: 20px;
     border: none;
-    padding: 15px 20px;
+    padding: 5px 5px;
     text-align: center;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
+    position: relative;
     bottom: 30px;
-    left: calc(25%);
+    left: auto;
 }
 #workshopOverlay {
     width: 200px;
     background-color: black;
-    opacity: 50%;
+    opacity: 50;
     color: white;
     font-size: 16px;
     border-radius: 30px;
