@@ -7,8 +7,7 @@ const cameraView = document.querySelector("#camera--view"),
     cameraTrigger = document.querySelector("#camera--trigger")
 //Define constants for which overlay is currently shown
 var x = 0;
-var createtextbox = document.createElement("INPUT");
-createtextbox.setAttribute("type", "text");
+
 // Access the device camera and stream to cameraView
 function cameraStart() {
     navigator.mediaDevices
