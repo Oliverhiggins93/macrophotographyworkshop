@@ -61,16 +61,7 @@ html, body{
     z-index: 2;
 }
 #buttonGroup {
-    width: 25%;
-    font-size: 20px;
-    border-radius: 30px;
-    border: none;
-    padding: 10px 10px;
-    text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
-    bottom: 30px;
-    left: calc(25%);
+
 }
 #workshopOverlay {
     width: 50%;
