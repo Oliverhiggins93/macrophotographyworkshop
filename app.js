@@ -39,6 +39,7 @@ cameraTrigger.onclick = function() {
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
     textCounter++;
+    displayText();
     extractRGBButton.style.display = "block"
     //cameraOutputRed.src = cameraSensor.toDataURL("image/webp");
     //cameraOutputRed.classList.add("takenred");
@@ -54,24 +55,24 @@ function displayText() {
     
 
     if (textCounter == 0) {
-        overlayText.innerText = "Thanks for clicking the button!";
+        overlayText.innerText = "Thanks for clicking the button! Here's soome theory about imaging. Click next when you are ready to move on.";
         
     }
     if (textCounter == 1) {
-        overlayText.innerText = "Thanks for clicking again!";
+        overlayText.innerText = "Thanks for clicking again! This is fun!";
     }
     if (textCounter == 2) {
-        overlayText.innerText = "OK THATS ENOUGH";
+        overlayText.innerText = "Here we can have some practical examples of things to do.";
     }
     if (textCounter == 3) {
-        overlayText.innerText = "The next click will hide the tip, so we can see the camera. Click the arrow at the bottom to bring it back up";
+        overlayText.innerText = "The next click will hide this tip, so we can see the camera. Lets take a photo";
     }
     if (textCounter == 4) {
         overlayBox.style.display = "none";
         
         //miniButtons.style.display = "block"
     }
-    if (textCounter > 4) {
+    if (textCounter == 5) {
         overlayBox.innerText = "Great, we took a picture. Now lets see what the Red and Blue components of the picture look like.";
         overlayBox.style.display = "block"
         

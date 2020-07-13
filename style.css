@@ -48,8 +48,8 @@ html, body{
 
 
 .taken{
-    height: 100px!important;
-    width: 100px!important;
+    height: 175px!important;
+    width: 175px!important;
     transition: all 0.5s ease-in;
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
@@ -59,8 +59,8 @@ html, body{
 }
 
 .takenred {
-    height: 100px !important;
-    width: 100px !important;
+    height: 175px !important;
+    width: 175px !important;
     transition: all 0.5s ease-in;
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
@@ -69,8 +69,8 @@ html, body{
     z-index: 2;
 }
 .takenblue {
-    height: 100px !important;
-    width: 100px !important;
+    height: 175px !important;
+    width: 175px !important;
     transition: all 0.5s ease-in;
     border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
