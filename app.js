@@ -31,6 +31,8 @@ function cameraStart() {
         console.error("Oops. Something is broken.", error);
     });
 }
+
+
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
@@ -137,3 +139,7 @@ function extractRGB() {
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
+
+
+
+
