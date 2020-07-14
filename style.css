@@ -12,7 +12,7 @@ html, body{
     
 }
 #camera--view {
-    transform: scaleX(-1);
+    /*transform: scaleX(-1);*/
     filter: FlipH;
 }
 #camera--view, #camera--sensor, #camera--output, #camera--output--red, #camera--output--blue, #camera--output--blue2 {
