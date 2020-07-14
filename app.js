@@ -40,10 +40,14 @@ cameraTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
     textCounter++;
     displayText();
-    extractRGBButton.style.display = "block"
-    //cameraOutputRed.src = cameraSensor.toDataURL("image/webp");
-    //cameraOutputRed.classList.add("takenred");
-    extractRGBOpencv()
+    if (textCounter > 4) {
+        extractRGBButton.style.display = "block"
+        //cameraOutputRed.src = cameraSensor.toDataURL("image/webp");
+        //cameraOutputRed.classList.add("takenred");
+        extractRGBOpencv()
+        
+    }
+    
 
 };
 
