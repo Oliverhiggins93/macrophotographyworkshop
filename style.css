@@ -11,8 +11,8 @@ html, body{
     object-fit: cover;
 }
 #camera--view, #camera--sensor, #camera--output, #camera--output--red, #camera--output--blue, #camera--output--blue2 {
-    transform: scaleX(-1);
-    /*filter: FlipH;*/
+    /*transform: scaleX(-1);
+    filter: FlipH;*/
 }
 #buttonGroup {
     margin: auto;
