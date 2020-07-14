@@ -43,7 +43,7 @@ cameraTrigger.onclick = function() {
     extractRGBButton.style.display = "block"
     //cameraOutputRed.src = cameraSensor.toDataURL("image/webp");
     //cameraOutputRed.classList.add("takenred");
-    
+    extractRGBOpencv()
 
 };
 
@@ -94,9 +94,6 @@ function extractRGB() {
     newCanvas.width = cameraSensor.width;
     newCanvas.height = cameraSensor.height;
     context.drawImage(cameraView, 0, 0);
-
-    
-    
     //cameraOutputRed.src = cameraOutput.src;
     //camanCanvas.drawImage(cameraOutput, 0, 0)
     //context.drawImage(cameraSensor, 0, 0);
@@ -132,6 +129,33 @@ function extractRGB() {
     });
     cameraOutputBlue.src = cameraOutput.src
     cameraOutputRed.classList.add("takenred");
+    cameraOutputBlue.classList.add("takenblue");
+}
+function extractRGBOpencv() {
+    var newCanvas = document.createElement('canvas');
+    var context = newCanvas.getContext('2d');
+    context.fillRect(0, 0, newCanvas.width, newCanvas.height);
+    newCanvas.width = cameraSensor.width;
+    newCanvas.height = cameraSensor.height;
+    
+    newCanvas.getContext('2d').drawImage(cameraView, 0, 0);
+    let src = cv.imread(cameraSensor);
+    let dst = new cv.Mat();
+    // You can try more different parameters
+
+    let rgbaPlanes = new cv.MatVector();
+    // Split the Mat
+    cv.split(src, rgbaPlanes);
+    // Get R channel
+    let R = rgbaPlanes.get(0);
+    let B = rgbaPlanes.get(2);
+    //cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY, 0);
+    cv.imshow(cameraSensor, R);
+    cameraOutputRed.src = cameraSensor.toDataURL();
+    cameraOutputRed.classList.add("takenred");
+
+    cv.imshow(cameraSensor, B);
+    cameraOutputBlue.src = cameraSensor.toDataURL();
     cameraOutputBlue.classList.add("takenblue");
 }
 
