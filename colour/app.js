@@ -1,4 +1,5 @@
 var textCounter = 0;
+video.play();
 
 //Define constants for which overlay is currently shown
 
