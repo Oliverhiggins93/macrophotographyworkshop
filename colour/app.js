@@ -1,5 +1,5 @@
 var textCounter = 0;
-video.play();
+
 
 //Define constants for which overlay is currently shown
 
@@ -46,6 +46,7 @@ function nextInstruction() {
 let processor = {
     timerCallback: function () {
         if (this.video.paused || this.video.ended) {
+            this.video.play();
             return;
         }
         this.computeFrame();
