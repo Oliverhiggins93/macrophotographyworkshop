@@ -5,23 +5,75 @@ html, body{
   width: 100%;
 }
 
-#workshopOverlay2 {
-    width: 50%;
-    background-color: black;
-    opacity: 50;
-    color: white;
-    font-size: 16px;
-    border-radius: 30px;
+.nextbutton, .prevButton {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: navy;
     border: none;
-    padding: 15px 20px;
+    color: #FFFFFF;
     text-align: center;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-    position: fixed;
-    bottom: 50%;
-    left: calc(25%);
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 }
+
+    .nextbutton span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .nextbutton span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+    .nextbutton:hover span {
+        padding-right: 25px;
+    }
+
+        .nextbutton:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+
+.prevbutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.prevbutton span:after {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.prevbutton:hover span {
+    padding-right: 25px;
+}
+
+    .prevbutton:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+
 #workshopOverlay {
-    width: 50%;
+    
     background-color: black;
     opacity: 50;
     color: white;
@@ -43,5 +95,37 @@ html, body{
     transform: translate(-50%, -50%);
 }
 
+#workshopText {
+    width: 50%;
+    background-color: black;
+    opacity: 50;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    margin: auto;
+    width: 50%;
+    border: 3px solid navy;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 
 
+#workshopImage, #workshopImage2, #workshopImage3 {
+    width: 100%;
+    float: left;
+}
+#my-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}

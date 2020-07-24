@@ -10,14 +10,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <video id="video" src="videoplayback.mp4" controls autoplay/>
+    <video autoplay muted loop id="my-video">
+        <source src="videoplayback.mp4" type="video/mp4">
+    </video>
+    <div id="workshopOverlay" style="vertical-align:middle">
+        <p id="workshopInstructions">In a film camera, light is projected onto photographic film by a lens, creating an image of the scene. But how does a digital camera sensor work?</p>
+        <div style="vertical-align:middle">
+            <p>
+                <img id="workshopImage" src="smartphone_camera.jpg" alt="Smartphone">
+                <img id="workshopImage2" src="smartphone_camera.jpg" alt="Smartphone">
+                <img id="workshopImage3" src="smartphone_camera.jpg" alt="Smartphone">
+            </p>
+        </div>
+        <button class="prevbutton" style="vertical-align:middle" onclick="previousInstruction()"><span id="prevButtonText">Previous</span></button>
+        <button id ="nextButton "class="nextbutton" style="vertical-align:middle" onclick="nextInstruction()"><span id="nextButtonText">Next </span></button>
     </div>
-    <div>
-        <canvas id="c1"></canvas>
-        <canvas id="c2"></canvas>
-    </div>
+    <canvas id="my-canvas" width="480" height="270"></canvas>
+
     <!-- Reference to your JavaScript file -->
     <script src="app.js"></script>
+    <script type="text/javascript" src="caman.min.js"></script>
+    <script src="opencv.js" type="text/javascript"></script>
 </body>
 </html>
