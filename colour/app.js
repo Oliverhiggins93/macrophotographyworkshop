@@ -11,7 +11,7 @@ function displayText() {
     var overlayText = document.getElementById("workshopInstructions");
     var overlayBox = document.getElementById("workshopOverlay");
     var nextButtonText = document.getElementById("nextButtonText");
-    var nextButton = document.getElementById("nextButtonText");
+    var nextButton = document.getElementById("nextButton");
     
 
     if (textCounter == 0) {
@@ -65,13 +65,9 @@ function displayText() {
         overlayImage.style.display = 'none';
         overlayImage2.style.display = 'none';
         overlayImage3.style.display = 'none';
-        overlayText.appendChild("https://oliverhiggins93.github.io/macrophotographyworkshop/colour/colourlab");
-        var a = document.createElement('a');
-        var linkText = document.createTextNode("Go To Lab");
-        a.appendChild(linkText);
-        a.title = "Go To Lab";
-        a.href = "https://oliverhiggins93.github.io/macrophotographyworkshop/colour/colourlab";
-        document.body.appendChild(a);
+        //overlayText.appendChild("https://oliverhiggins93.github.io/macrophotographyworkshop/colour/colourlab");
+
+          
     }
 
 
