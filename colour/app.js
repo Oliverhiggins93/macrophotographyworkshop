@@ -16,7 +16,7 @@ function displayText() {
 
     if (textCounter == 0) {
         overlayText.innerText = "In a film camera, light is projected onto photographic film by a lens, creating an image of the scene. But how does a digital camera sensor work?";
-        overlayImage.src = "smartphone_camera.jpg"
+        overlayImage.src = "ezgif-7-5c740e6389ea.gif"
         
     }
     if (textCounter == 1) {
@@ -33,11 +33,11 @@ function displayText() {
     }
     if (textCounter == 4) {
         overlayText.innerText = "This is called a bayer filter – a repeating checker-board like array of colour filters which sits over the pixels. The filter restricts the wavelengths of light that are transmitted to each pixel, each taking in only red, green or blue wavelengths so that we can work out the colour characteristics of the image.";
-        overlayImage.src = "1200px-Bayer_pattern_on_sensor.svg.png"
+        overlayImage.src = "ezgif-7-478f3f492756.gif"
     }
     if (textCounter == 5) {
         overlayText.innerText = "Notice how the Bayer array contains twice as many green as red or blue sensors? The human eye is more sensitive to green light than both red and blue light, so there are double the number of green pixels to emulate the way the eye sees colour. Redundancy with green pixels produces an image which appears less noisy and has finer detail than could be accomplished if each colour were treated equally. This also explains why noise in the green channel is much less than for the other two primary colours";
-        overlayImage.src = "1200px-Bayer_pattern_on_sensor.svg.png"
+        overlayImage.src = "ezgif-7-478f3f492756.gif"
     }
     if (textCounter == 6) {
         overlayText.innerText = "The image we can see on the left below is what the camera sees before the image is fully processed. It looks weird, doesn't it? Because each pixel only takes in red, green or blue light we end up with a kind of checkerboard over the image. The image on the right is what the image looks like after processing into a full colour 3 layer stack.";
