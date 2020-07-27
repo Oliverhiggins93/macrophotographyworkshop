@@ -49,7 +49,7 @@ function displayText() {
         overlayImage2.style.display = 'none';
         overlayImage3.style.display = 'none';
     }
-    if (textCounter == 7) {
+    if (textCounter == 8) {
         overlayText.innerText = "Check out the image of the grafitti below. If we can split the image into the blue and red channels to see its different components!";
         overlayImage2.style.display = 'block';
         overlayImage3.style.display = 'block';
@@ -57,22 +57,25 @@ function displayText() {
         overlayImage2.src = "52420981_2035451236523484_2022786281947267072_o_green.jpg"
         overlayImage3.src = "52420981_2035451236523484_2022786281947267072_o_blue.jpg"
     }
-    if (textCounter == 8) {
-        overlayText.innerText = "Nice! Now lets try it out on the camera feed. You can explore the colours of things around you! Click link:  https://oliverhiggins93.github.io/macrophotographyworkshop/colour/colourlab";
-        overlayImage2.style.display = 'block';
-        overlayImage3.style.display = 'block';
+    if (textCounter == 9) {
+        overlayText.innerText = "Nice! Now lets try it out on the camera feed. You can explore the colours of things around you! Click next below:";
         overlayImage.src = "52420981_2035451236523484_2022786281947267072_o_red.jpg"
         overlayImage.style.display = 'none';
         overlayImage2.style.display = 'none';
         overlayImage3.style.display = 'none';
         //overlayText.appendChild("https://oliverhiggins93.github.io/macrophotographyworkshop/colour/colourlab");
-
-          
+        
+    }
+    if (textCounter == 10) {
+        gotolab();
     }
 
 
 }
 
+function gotolab() {
+    window.location.replace("https://oliverhiggins93.github.io/macrophotographyworkshop/colour/colourlab");
+}
 function previousInstruction() {
     textCounter--;
     displayText();
