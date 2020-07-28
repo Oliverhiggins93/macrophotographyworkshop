@@ -1,0 +1,100 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+#camera, #camera--view, #camera--sensor, #camera--output, #camera--output--red, #camera--output--blue, #camera--output--blue2 {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+#camera--view {
+    /*transform: scaleX(-1);*/
+    filter: FlipH;
+}
+#camera--view, #camera--sensor, #camera--output, #camera--output--red, #camera--output--blue, #camera--output--blue2 {
+
+}
+#buttonGroup {
+    margin: auto;
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    bottom: 10px;
+    position: fixed;
+}
+#camera--trigger {
+    margin: auto;
+    color: white;
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    bottom: 10px;
+    position: fixed;
+    background-color: black;
+    border: none;
+}
+
+#extractRGBButton {
+    background-color: black;
+    color: white;
+    margin: auto;
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    bottom: 20%;
+    position: fixed;
+    border: none;
+}
+
+
+.taken{
+    height: 200px!important;
+    width: 200px!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.takenred {
+    height: 200px !important;
+    width: 200px !important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 240px;
+    right: 20px;
+    z-index: 2;
+}
+.takenblue {
+    height: 200px !important;
+    width: 200px !important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 440px;
+    right: 20px;
+    z-index: 2;
+}
+
+#workshopOverlay {
+    width: 50%;
+    background-color: black;
+    opacity: 50;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 200px;
+    left: calc(25%);
+}
