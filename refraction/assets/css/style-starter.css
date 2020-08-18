@@ -7469,7 +7469,8 @@ a.text-dark:hover, a.text-dark:focus {
   content: ""; }
 
 .fa-file-o:before {
-  content: ""; }
+    content: "f3cd";
+}
 
 .fa-clock-o:before {
   content: ""; }
