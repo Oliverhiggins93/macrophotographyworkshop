@@ -112,12 +112,9 @@ function hideOverlay() {
     activity3.style.display = "none"
 }
 function changeCamera() {
-    if (constraints == { video: { facingMode: "user" }, audio: false }) {
-        constraints = { video: { facingMode: "environment" }, audio: false };
-    }
-    else {
+
         constraints = { video: { facingMode: "user" }, audio: false };
-    }
+    
     cameraStart()
 
 }
