@@ -112,8 +112,9 @@ function hideOverlay() {
     activity3.style.display = "none"
 }
 function changeCamera() {
-
-        constraints = { video: { facingMode: "user" }, audio: false };
+    navigator.mediaDevices
+        .getUserMedia(constraints).stop();
+    constraints = { video: { facingMode: "user" }, audio: false };
     
     cameraStart()
 
