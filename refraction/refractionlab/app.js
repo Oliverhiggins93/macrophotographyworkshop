@@ -1,5 +1,5 @@
 // Set constraints for the video stream
-var constraints = { video: { facingMode: "environment" }, audio: false };
+var constraints = { video: { facingMode: "user" }, audio: false };
 var textCounter = 0;
 //var miniButtons = document.getElementById("miniButtons");
 //miniButtons.style.display = "none"
@@ -59,11 +59,12 @@ function displayText() {
         activity1Overlay.style.display = "none";
         activity2Overlay.style.display = "none";
         activity3Overlay.style.display = "none";
-        overlayText.innerText = "Hello and welcome to the workshop. These tool tips will guide you through how to perform the experiments. \n \n Once you are ready to begin, click one of the Activity boxes below.";
-        prevButton.style.display = "none";
+        overlayText.innerText = "Hello and welcome to the workshop. These tool tips will guide you through how to perform the experiments. \n \n Once you are ready to begin, please select which camera you would like to use below:";
+        
     }
     if (textCounter == 1) {
         overlayBox.style.display = "none";
+        
     }
     if (textCounter == 2) {
         overlayText.innerText = "Here we can have some practical examples of things to do.";
@@ -84,12 +85,14 @@ function displayText() {
 }
 
 function previousInstruction() {
-    textCounter--;
+    textCounter++;
     displayText();
+    constraints = { video: { facingMode: "user" }, audio: false };
 }
 function nextInstruction() {
     textCounter++;
     displayText();
+    constraints = { video: { facingMode: "environment" }, audio: false };
 }
 function showActivity1() {
     activity1.style.display = "block"
@@ -110,12 +113,6 @@ function hideOverlay() {
     activity1.style.display = "none"
     activity2.style.display = "none"
     activity3.style.display = "none"
-}
-function changeCamera() {
-    constraints = { video: { facingMode: "user" }, audio: false };
-    
-    cameraStart()
-
 }
 
 // Start the video stream when the window loads
