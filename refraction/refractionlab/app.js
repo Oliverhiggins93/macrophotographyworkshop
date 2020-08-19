@@ -3,9 +3,6 @@ var constraints = { video: { facingMode: "environment" }, audio: false };
 var textCounter = 0;
 //var miniButtons = document.getElementById("miniButtons");
 //miniButtons.style.display = "none"
-var imagered = new Image();
-var extractRGBButton = document.getElementById("extractRGBButton");
-extractRGBButton.style.display = "none"
 
 // Define constants
 var cameraView = document.querySelector("#camera--view"),
@@ -13,7 +10,13 @@ var cameraView = document.querySelector("#camera--view"),
     cameraSensor = document.querySelector("#camera--sensor"),
     cameraTrigger = document.querySelector("#camera--trigger"),
     cameraOutputRed = document.querySelector("#camera--output--red"),
-    cameraOutputBlue = document.querySelector("#camera--output--blue")
+    cameraOutputBlue = document.querySelector("#camera--output--blue"),
+    prevButton = document.querySelector("#previousButton"),
+    nextButton = document.querySelector("#nextButton"),
+    activity1 = document.querySelector("#activity1Overlay"),
+    activity2 = document.querySelector("#activity2Overlay"),
+    activity3 = document.querySelector("#activity3Overlay"),
+    changeCameraButton = document.querySelector("#switch-camera")
 
 
 
@@ -30,6 +33,7 @@ function cameraStart() {
     .catch(function(error) {
         console.error("Oops. Something is broken.", error);
     });
+    displayText();
 }
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
@@ -40,13 +44,6 @@ cameraTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
     textCounter++;
     displayText();
-    if (textCounter > 4) {
-        extractRGBButton.style.display = "block"
-        //cameraOutputRed.src = cameraSensor.toDataURL("image/webp");
-        //cameraOutputRed.classList.add("takenred");
-        extractRGBOpencv()
-        
-    }
     
 
 };
@@ -59,11 +56,14 @@ function displayText() {
     
 
     if (textCounter == 0) {
-        overlayText.innerText = "Thanks for clicking the button! Here's soome theory about imaging. Click next when you are ready to move on.";
-        
+        activity1Overlay.style.display = "none";
+        activity2Overlay.style.display = "none";
+        activity3Overlay.style.display = "none";
+        overlayText.innerText = "Hello and welcome to the workshop. These tool tips will guide you through how to perform the experiments. \n \n Once you are ready to begin, click one of the Activity boxes below.";
+        prevButton.style.display = "none";
     }
     if (textCounter == 1) {
-        overlayText.innerText = "Thanks for clicking again! This is fun!";
+        overlayBox.style.display = "none";
     }
     if (textCounter == 2) {
         overlayText.innerText = "Here we can have some practical examples of things to do.";
@@ -91,76 +91,30 @@ function nextInstruction() {
     textCounter++;
     displayText();
 }
-function extractRGB() {
-    var newCanvas = document.createElement('canvas');
-    var context = newCanvas.getContext('2d');
-    context.fillRect(0, 0, newCanvas.width, newCanvas.height);
-    newCanvas.width = cameraSensor.width;
-    newCanvas.height = cameraSensor.height;
-    context.drawImage(cameraView, 0, 0);
-    //cameraOutputRed.src = cameraOutput.src;
-    //camanCanvas.drawImage(cameraOutput, 0, 0)
-    //context.drawImage(cameraSensor, 0, 0);
-    cameraOutputRed.src = cameraOutput.src
-    Caman('#camera--Output--Red', function () {
-        this.channels({
-            red: 0,
-            green: -100,
-            blue: -100
-        }).render();
-    });
-
-    cameraOutputRed.src = newCanvas.toDataURL();
-    cameraOutputRed.classList.add("takenred");
-
-    cameraOutputRed.src = cameraOutput.src;
-    //camanCanvas.drawImage(cameraOutput, 0, 0)
-    //context.drawImage(cameraSensor, 0, 0);
-
-    var blueCanvas = document.createElement('canvas');
-    var blueContext = newCanvas.getContext('2d');
-    blueContext.width = cameraSensor.width;
-    blueContext.height = cameraSensor.height;
-    blueContext.drawImage(cameraView, 0, 0);
-    blueContext.fillRect(0, 0, newCanvas.width, newCanvas.height);
-           
-    Caman('#camera--Output--Blue', function () {
-        this.channels({
-            red: -100,
-            green: -100,
-            blue: 0
-        }).render();
-    });
-    cameraOutputBlue.src = cameraOutput.src
-    cameraOutputRed.classList.add("takenred");
-    cameraOutputBlue.classList.add("takenblue");
+function showActivity1() {
+    activity1.style.display = "block"
+    activity2.style.display = "none"
+    activity3.style.display = "none"
 }
-function extractRGBOpencv() {
-    var newCanvas = document.createElement('canvas');
-    var context = newCanvas.getContext('2d');
-    context.fillRect(0, 0, newCanvas.width, newCanvas.height);
-    newCanvas.width = cameraSensor.width;
-    newCanvas.height = cameraSensor.height;
-    
-    newCanvas.getContext('2d').drawImage(cameraView, 0, 0);
-    let src = cv.imread(cameraSensor);
-    let dst = new cv.Mat();
-    // You can try more different parameters
+function showActivity2() {
+    activity1.style.display = "none"
+    activity2.style.display = "block"
+    activity3.style.display = "none"
+}
+function showActivity3() {
+    activity1.style.display = "none"
+    activity2.style.display = "none"
+    activity3.style.display = "block"
+}
+function hideOverlay() {
+    activity1.style.display = "none"
+    activity2.style.display = "none"
+    activity3.style.display = "none"
+}
+function changeCamera() {
+    constraints = { video: { facingMode: "user" }, audio: false };
+    cameraStart()
 
-    let rgbaPlanes = new cv.MatVector();
-    // Split the Mat
-    cv.split(src, rgbaPlanes);
-    // Get R channel
-    let R = rgbaPlanes.get(0);
-    let B = rgbaPlanes.get(2);
-    //cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY, 0);
-    cv.imshow(cameraSensor, R);
-    cameraOutputRed.src = cameraSensor.toDataURL();
-    cameraOutputRed.classList.add("takenred");
-
-    cv.imshow(cameraSensor, B);
-    cameraOutputBlue.src = cameraSensor.toDataURL();
-    cameraOutputBlue.classList.add("takenblue");
 }
 
 // Start the video stream when the window loads
