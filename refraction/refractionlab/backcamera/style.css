@@ -1,0 +1,140 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+#camera, #camera--view, #camera--sensor, #camera--output, #camera--output--red, #camera--output--blue, #camera--output--blue2 {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+#camera--view {
+    /*transform: scaleX(-1);*/
+    filter: FlipH;
+}
+#camera--view, #camera--sensor, #camera--output, #camera--output--red, #camera--output--blue, #camera--output--blue2 {
+
+}
+#buttonGroup {
+    flex: auto;
+    align-items: center;
+    left: calc(5%);
+    right: calc(5%);
+    margin: auto;
+    width: 80%;
+    height: 10%;
+    padding: 40px;
+    bottom: 10px;
+    position: fixed;
+}
+#camera--trigger, #activity1, #activity2, #activity3, #switch-camera {
+    flex:auto;
+    align-items: center;
+    color: white;
+    border: none;
+    background-color: navy;
+    border: none;
+    padding: 20px;
+    font-size: 2vw;
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.4);
+    /*
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    bottom: 10px;
+    position: fixed;
+    background-color: black;
+    border: none;
+    */
+}
+#nextButton, #previousButton, #hideOverlay {
+    flex: auto;
+    align-items: center;
+    color: black;
+    border: none;
+    background-color: white;
+    border: none;
+    padding: 20px;
+    font-size: 2vw;
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.4);
+    border-radius: 1vw;
+    /*
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    bottom: 10px;
+    position: fixed;
+    background-color: black;
+    border: none;
+    */
+}
+
+
+.taken {
+    height: 200px !important;
+    width: 200px !important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.4);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+#workshopOverlay{
+    width: 50%;
+    background-color: navy;
+    opacity: 50;
+    color: white;
+    font-size: 3vw;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    bottom: 200px;
+    left: calc(25%);
+    font-family: Arial;
+    
+}
+
+#activity1Overlay {
+    width: 70%;
+    background-color: navy;
+    opacity: 50;
+    color: white;
+    font-size: 3vw;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    bottom: 200px;
+    left: calc(15%);
+    font-family: Arial;
+    top: 100px;
+    overflow-y: scroll;
+}
+
+#activity2Overlay, #activity3Overlay {
+    width: 70%;
+    background-color: navy;
+    opacity: 50;
+    color: white;
+    font-size: 3vw;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    bottom:200px;
+    left: calc(15%);
+    font-family: Arial;
+    top: 200px;
+    overflow-y: scroll;
+}
+
