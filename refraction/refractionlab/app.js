@@ -115,7 +115,7 @@ function changeCamera() {
     if (constraints == { video: { facingMode: "user" }, audio: false }) {
         constraints = { video: { facingMode: "environment" }, audio: false };
     }
-    if (constraints == { video: { facingMode: "environment" }, audio: false }) {
+    else {
         constraints = { video: { facingMode: "user" }, audio: false };
     }
     cameraStart()
