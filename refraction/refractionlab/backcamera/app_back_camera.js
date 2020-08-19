@@ -88,12 +88,10 @@ function displayText() {
 function previousInstruction() {
     textCounter++;
     displayText();
-    constraints = { video: { facingMode: "user" }, audio: false };
 }
 function nextInstruction() {
     textCounter++;
     displayText();
-    constraints = { video: { facingMode: "environment" }, audio: false };
 }
 function showActivity1() {
     activity1.style.display = "block"
