@@ -9649,7 +9649,7 @@ p.white {
 .radius-image {
 
   border-radius: var(--border-radius);
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 
 /*-- container --*/
