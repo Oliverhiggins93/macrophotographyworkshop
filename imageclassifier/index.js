@@ -17,7 +17,7 @@
 
 //import * as tf from '@tensorflow/tfjs';
 
-import {IMAGENET_CLASSES} from './imagenet_classes.js';
+import {IMAGENET_CLASSES} from 'imagenet_classes.js';
 
 const MOBILENET_MODEL_PATH =
     // tslint:disable-next-line:max-line-length
