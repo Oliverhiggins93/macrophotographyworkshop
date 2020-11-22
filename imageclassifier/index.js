@@ -35,7 +35,7 @@ const mobilenetDemo = async () => {
   // Warmup the model. This isn't necessary, but makes the first prediction
   // faster. Call `dispose` to release the WebGL memory allocated for the return
   // value of `predict`.
-  mobilenet.predict(tf.zeros([null, IMAGE_SIZE, IMAGE_SIZE, 3])).dispose();
+  mobilenet.predict(tf.zeros([1, IMAGE_SIZE, IMAGE_SIZE, 3])).dispose();
 
   status('');
 
