@@ -28,7 +28,7 @@ const TOPK_PREDICTIONS = 3;
 
 let mobilenet;
 const mobilenetDemo = async () => {
-  status('Loading model...');
+  status('Loading model...');   
 
   mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH);
 
