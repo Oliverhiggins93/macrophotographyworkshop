@@ -21,7 +21,7 @@ import {IMAGENET_CLASSES} from './imagenet_classes.js';
 
 const MOBILENET_MODEL_PATH =
     // tslint:disable-next-line:max-line-length
-    'https://oliverhiggins93.github.io/macrophotographyworkshop/imageclassifier/jsmodel2/model.json';
+    'https://github.com/fchollet/deep-learning-models/releases/download/v0.6/mobilenet_2_5_224_tf.h5';
 
 const IMAGE_SIZE = 224;
 const TOPK_PREDICTIONS = 3;
