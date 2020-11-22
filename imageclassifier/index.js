@@ -40,7 +40,10 @@ const mobilenetDemo = async () => {
   status('');
 
   // Make a prediction through the locally hosted cat.jpg.
-  const catElement = document.getElementById('cat');
+    const catElement = document.getElementById('cat');
+    const hairElement = document.getElementById('hair');
+    const onionElement = document.getElementById('onion');
+    const phoneElement = document.getElementById('phone');
   if (catElement.complete && catElement.naturalHeight !== 0) {
     predict(catElement);
     catElement.style.display = '';
@@ -50,7 +53,9 @@ const mobilenetDemo = async () => {
       catElement.style.display = '';
     }
   }
-
+    predict(hairElement);
+    predict(onionElement);
+    predict(phoneElement);
   document.getElementById('file-container').style.display = '';
 };
 
