@@ -54,8 +54,11 @@ const mobilenetDemo = async () => {
     }
   }
     predict(hairElement);
+    hairElement.style.display = '';
     predict(onionElement);
+    onionElement.style.display = '';
     predict(phoneElement);
+    phoneElement.style.display = '';
   document.getElementById('file-container').style.display = '';
 };
 
