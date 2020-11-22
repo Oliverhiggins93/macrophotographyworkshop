@@ -17,11 +17,11 @@
 
 //import * as tf from '@tensorflow/tfjs';
 
-import {IMAGENET_CLASSES} from './imagenet_classes.js';
+import {IMAGENET_CLASSES} from './my_classes.js';
 
 const MOBILENET_MODEL_PATH =
     // tslint:disable-next-line:max-line-length
-    'https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json';
+    'https://oliverhiggins93.github.io/macrophotographyworkshop/imageclassifier/jsmodel2/model.json';
 
 const IMAGE_SIZE = 224;
 const TOPK_PREDICTIONS = 3;
