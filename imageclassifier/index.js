@@ -23,8 +23,8 @@ const MOBILENET_MODEL_PATH =
     // tslint:disable-next-line:max-line-length
     'https://oliverhiggins93.github.io/macrophotographyworkshop/imageclassifier/jsmodel2/model.json';
 
-const IMAGE_SIZE = 150;
-const TOPK_PREDICTIONS = 10;
+const IMAGE_SIZE = 224;
+const TOPK_PREDICTIONS = 3;
 
 let mobilenet;
 const mobilenetDemo = async () => {
