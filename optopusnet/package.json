@@ -1,7 +1,6 @@
 {
   "name": "tfjs-examples-mobilenet",
   "version": "0.1.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
   "license": "Apache-2.0",
