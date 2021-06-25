@@ -54,7 +54,7 @@ const mobilenetDemo = async () => {
     }
   }
     predict(hairElement);
-    hairElement.style.display = '';
+    hairElement.style.display = 'Block';
     predict(onionElement);
     onionElement.style.display = '';
     predict(phoneElement);
