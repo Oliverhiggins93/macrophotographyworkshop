@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 Copyright 2018 Google LLC. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,13 +18,10 @@ limitations under the License.
 <!doctype html>
 
 <head>
-    <title>TensorFlow.js: Using a pretrained MobileNet</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="tfjs-examples.css" />
-    <script type="module" src="index.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2"></script>
+  <title>TensorFlow.js: Using a pretrained MobileNet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../shared/tfjs-examples.css" />
 </head>
 
 <style>
@@ -53,15 +50,13 @@ limitations under the License.
 
 <body>
   <div class="tfjs-example-container">
-      <section class='title-area'>
-          <!--<h1>TensorFlow.js: Using a pretrained MobileNet</h1>-->
+    <section class='title-area'>
+      <h1>TensorFlow.js: Using a pretrained MobileNet</h1>
     </section>
 
     <section>
-        <p class='section-head'>
-            <!--Description--></p>
-    <!--
-        <p>
+      <p class='section-head'>Description</p>
+      <p>
         This demo uses the pretrained MobileNet_25_224 model from Keras which you can find
         <a href="https://github.com/fchollet/deep-learning-models/releases/download/v0.6/mobilenet_2_5_224_tf.h5">here</a>.
 
@@ -69,29 +64,25 @@ limitations under the License.
         like piano, coffee mugs, bottles, etc. You can see all the objects types it has been trained to recognize in <a
           href="https://github.com/tensorflow/tfjs-examples/blob/master/mobilenet/imagenet_classes.js">imagenet_classes.js</a>.
       </p>
-        -->
-</section>
+    </section>
 
-        <section>
-          <p class='section-head'>Status</p>
-          <div id="status"></div>
-        </section>
+    <section>
+      <p class='section-head'>Status</p>
+      <div id="status"></div>
+    </section>
 
-        <section>
-            <p class='section-head'>Model Output</p>
+    <section>
+      <p class='section-head'>Model Output</p>
 
-            <div id="file-container" style="display: none">
-                Upload an image: <input type="file" id="files" name="files[]" multiple />
-            </div>
-
-            <div id="predictions"></div>
-
-            <img style="display: none" id="cat" src="https://oliverhiggins93.github.io/macrophotographyworkshop/imageclassifier/maxresdefault.jpg" width=224 height=224 />
-            <img style="display: none" id="onion" src="https://oliverhiggins93.github.io/macrophotographyworkshop/imageclassifier/9c42fc47d4.jpg" width=224 height=224 />
-            <img style="display: none" id="hair" src="https://oliverhiggins93.github.io/macrophotographyworkshop/imageclassifier/50d23a242a.jpg" width=224 height=224 />
-            <img style="display: none" id="phone" src="https://oliverhiggins93.github.io/macrophotographyworkshop/imageclassifier/d4820141b4.jpg" width=224 height=224 />
-        </section>
-
-
+      <div id="file-container" style="display: none">
+        Upload an image: <input type="file" id="files" name="files[]" multiple />
       </div>
-    </body>
+
+      <div id="predictions"></div>
+
+      <img style="display: none" id="cat" src="cat.jpg" width=224 height=224 />
+    </section>
+
+    <script src="index.js"></script>
+  </div>
+</body>
