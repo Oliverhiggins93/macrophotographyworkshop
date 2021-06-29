@@ -1045,7 +1045,7 @@ const IMAGENET_CLASSES = {
 
 const MOBILENET_MODEL_PATH =
     // tslint:disable-next-line:max-line-length
-    'https://tfhub.dev/google/tfjs-model/imagenet/mobilenet_v2_100_224/classification/3/default/1';
+    'https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json';
 
 const IMAGE_SIZE = 224;
 const TOPK_PREDICTIONS = 10;
