@@ -62,14 +62,12 @@ limitations under the License.
 </style>
 
 <body>
-    <h3>TensorFlow.js: Using a pretrained MobileNet</h3>
+    <h3>Optopus Image Classifer</h3>
 
     <p>
-        This demo uses the pretrained MobileNet_25_224 model from Keras which you can find
-        <a href="https://github.com/fchollet/deep-learning-models/releases/download/v0.6/mobilenet_2_5_224_tf.h5">here</a>.
+        This simple app will try to guess which objects are present in any images you upload.
 
-        It is not trained to recognize human faces. For best performance, upload images of objects
-        like piano, coffee mugs, bottles, etc.
+        It works best if you clearly take an image of an object, such as a mug or TV screen. It is trained to recognise many different types of objects, and will give you a score between 0 and 1 which tells you which object it looks the most like. Give it a try and see what it can identify!
     </p>
 
     <div id="file-container" style="display: none">
@@ -80,7 +78,7 @@ limitations under the License.
 
     <div id="predictions"></div>
 
-    <img style="display: none" id="cat" crossorigin="anonymous" src="https://raw.githubusercontent.com/Oliverhiggins93/macrophotographyworkshop/master/optopusnet/dog.jpg" width=224 height=224 />
+    <img style="display: none" id="cat" crossorigin="anonymous" src="https://raw.githubusercontent.com/Oliverhiggins93/macrophotographyworkshop/master/optopusnet/octopus.jpg" width=224 height=224 />
 </body>
 
 
@@ -94,7 +92,7 @@ limitations under the License.
 
 
 
-<script src="imagenet_classes.js"></script>
+<!--<script src="imagenet_classes.js"></script>-->
 
 
 <script type="module" src="index.js"></script>
